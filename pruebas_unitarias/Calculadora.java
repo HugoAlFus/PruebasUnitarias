@@ -1,7 +1,6 @@
 package pruebas_unitarias;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
@@ -14,7 +13,7 @@ import java.util.Scanner;
  */
 public class Calculadora {
 
-    static final Logger LOGGER = LogManager.getLogger(Calculadora.class.getSimpleName());
+    //static final Logger LOGGER = LogManager.getLogger(Calculadora.class.getSimpleName());
     static double numero1;
     static double numero2;
     static Scanner sc = new Scanner(System.in);
@@ -71,11 +70,11 @@ public class Calculadora {
             System.out.print("Ingrese el segundo numero: ");
             numero2 = sc.nextDouble();
         } catch (InputMismatchException e) {
-            LOGGER.error(e.getStackTrace());
+            //LOGGER.error(e.getStackTrace());
             System.err.println("ERROR: Ha introducido un valor no valido");
             System.exit(0);
         } catch (NoSuchElementException | IllegalStateException e) {
-            LOGGER.error(e.getStackTrace());
+            //LOGGER.error(e.getStackTrace());
             System.err.println("ERROR: Ha ocurrido un error inesperado");
             System.exit(0);
         }
@@ -101,11 +100,11 @@ public class Calculadora {
                     """);
             opcion = sc.next().charAt(0);
         } catch (NoSuchElementException | IllegalStateException e) {
-            LOGGER.error(e.getStackTrace());
+            //LOGGER.error(e.getStackTrace());
             System.err.println("ERROR: Ha ocurrido un error inesperado");
             System.exit(0);
         } catch (IndexOutOfBoundsException ex) {
-            LOGGER.error(ex.getStackTrace());
+            //LOGGER.error(ex.getStackTrace());
             System.err.println("ERROR: Ha introducido un valor no valido");
             System.exit(0);
         }
